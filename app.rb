@@ -11,7 +11,8 @@ class App < Sinatra::Base
 
     params[:student][:courses].each do |details|
       Course.new(details)
-    end 
+    end
+    @courses = course.all
   end
 
 end
