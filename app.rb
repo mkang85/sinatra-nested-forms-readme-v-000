@@ -6,8 +6,12 @@ class App < Sinatra::Base
     erb :new
   end
 
-  post '/display' do 
+  post '/display' do
     @student = Student.new(params[:student])
-  end 
-  
+
+    params[:student][:courses].each do |details|
+      Course.new(details)
+    end 
+  end
+
 end
