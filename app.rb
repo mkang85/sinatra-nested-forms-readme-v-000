@@ -13,6 +13,7 @@ class App < Sinatra::Base
       Course.new(details)
     end
     @courses = Course.all
+    erb :display
   end
 
 end
